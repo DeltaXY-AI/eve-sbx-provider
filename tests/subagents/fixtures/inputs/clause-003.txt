@@ -1,0 +1,2 @@
+Clause ID: clause-003
+Quoted sentence: "The supervisor shall verify closure before the next scheduled inspection."

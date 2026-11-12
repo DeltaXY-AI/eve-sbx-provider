@@ -1,0 +1,11 @@
+{
+  "name": "sbx12-subagent-fixture",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "eve": "1.0.0-rc.6",
+    "@deltaxy.ai/eve-sbx-provider": "file:../../..",
+    "@openrouter/ai-sdk-provider": "3.1.0",
+    "zod": "4.5.4"
+  }
+}

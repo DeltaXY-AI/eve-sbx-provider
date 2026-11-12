@@ -1,0 +1,7 @@
+{
+  "name": "sbx10-eve-app-a",
+  "private": true,
+  "type": "module",
+  "scripts": { "build": "eve build", "start": "eve start --host 127.0.0.1 --port 23101" },
+  "dependencies": { "eve": "1.0.0-rc.6", "@deltaxy.ai/eve-sbx-provider": "file:../../.." }
+}

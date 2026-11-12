@@ -1,0 +1,9 @@
+{
+  "name": "eve-sbx-minimal-sbx-example",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "eve": "1.0.0-rc.6",
+    "@deltaxy.ai/eve-sbx-provider": "file:../.."
+  }
+}

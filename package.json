@@ -1,0 +1,51 @@
+{
+  "name": "@deltaxy.ai/eve-sbx-provider",
+  "version": "0.1.0",
+  "description": "An Eve sandbox provider backed by local Docker Sandboxes microVMs",
+  "type": "module",
+  "license": "Apache-2.0",
+  "contributors": [
+    { "name": "Chaya", "email": "chaya@deltaxy.ai" },
+    { "name": "Goutham", "email": "goutham@deltaxy.ai" }
+  ],
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "peerDependencies": {
+    "eve": "1.0.0-rc.6"
+  },
+  "devDependencies": {
+    "@types/node": "24.10.1",
+    "eve": "1.0.0-rc.6",
+    "typescript": "7.0.2"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepack": "npm run build",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "node --test",
+    "test:provider-contract": "npm run build && node tests/provider-contract/live.mjs",
+    "test:provider-contract:live": "npm run build && node --input-type=module -e \"process.env.SBX9_LIVE='1'; await import('./tests/provider-contract/live.mjs')\"",
+    "test:ownership:live": "npm run build && node --input-type=module -e \"process.env.SBX10_LIVE='1'; await import('./tests/lifecycle/live.mjs')\"",
+    "test:apps:live": "npm run build && node --input-type=module -e \"process.env.SBX10_APPS_LIVE='1'; await import('./tests/apps/live.mjs')\"",
+    "test:sbx10:live": "npm run test:ownership:live && npm run test:apps:live",
+    "test:security:live": "npm run build && node --input-type=module -e \"process.env.SBX11_LIVE='1'; await import('./tests/security/live.mjs')\"",
+    "test:subagents:live": "npm run build && node --input-type=module -e \"process.env.SBX12_LIVE='1'; await import('./tests/subagents/live.mjs')\"",
+    "pack:dry-run": "npm pack --dry-run"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "SECURITY.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  }
+}

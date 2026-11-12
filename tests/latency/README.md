@@ -1,0 +1,3 @@
+# SBX-9 latency
+
+Latency is sampled in `../provider-contract/live.mjs` on the reference host without any model calls. The runner records five cached-template cold VM starts with pool size zero, ready-pool assignments with size two, and 25 serial trivial `true` commands. Raw values and median are retained as JSON; host/guest versions and pool settings are recorded. Ready assignment must remain below 200 ms and trivial-command median below 100 ms. Cold-start has no supplied threshold. A threshold miss fails and requires investigation; do not change thresholds. This is a host-specific regression check, not a guarantee for all hardware.
