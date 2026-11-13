@@ -2,6 +2,14 @@
   "name": "@deltaxy.ai/eve-sbx-provider",
   "version": "0.1.0",
   "description": "An Eve sandbox provider backed by local Docker Sandboxes microVMs",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DeltaXY-AI/eve-sbx-provider.git"
+  },
+  "homepage": "https://github.com/DeltaXY-AI/eve-sbx-provider#readme",
+  "bugs": {
+    "url": "https://github.com/DeltaXY-AI/eve-sbx-provider/issues"
+  },
   "type": "module",
   "license": "Apache-2.0",
   "contributors": [
